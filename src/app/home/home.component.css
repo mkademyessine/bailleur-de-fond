@@ -1,0 +1,25 @@
+.bailleur_button{
+    align-items: center;
+    width: 250px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 20%;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    
+    
+}
+.zone_button{
+    align-items: center;
+    width: 250px;
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 40px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    
+}

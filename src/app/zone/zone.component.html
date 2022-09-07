@@ -1,0 +1,17 @@
+<section class="zone">
+    <form [formGroup]="formgroup">
+        <mat-dialog-content class="content">
+            <button mat-raised-button color ="warn" mat-dialog-close  class="close">Close</button>
+            <h1 mat-dialog-title>Zone information</h1>
+            <mat-form-field appearance="fill" style="width:300px !important">
+                <mat-label>Zone Name</mat-label>
+                <input matInput type="text" formControlName="zone_name">
+              </mat-form-field><br>
+              <mat-form-field appearance="fill" style="width:300px !important">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="write your description" rows="4" formControlName="description"></textarea>
+              </mat-form-field>
+        </mat-dialog-content>
+        <button mat-raised-button color ="primary" class="save"  (click)="save()">Save</button>
+    </form>
+</section>

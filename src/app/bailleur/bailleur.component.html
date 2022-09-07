@@ -1,0 +1,45 @@
+<section class="bailleur">
+  <mat-dialog-content>
+    <form [formGroup]="formgroup">      
+            <button mat-raised-button color="warn" class="close" mat-dialog-close="">close</button>
+            <h1 mat-dialog-title>Bailleur de fond</h1>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="Ex. John" value="name" type="text" formControlName="firstname">
+              </mat-form-field>
+              <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Ex. roland" value="second name" type="text" formControlName="lastname" >
+              </mat-form-field><br>
+              <mat-form-field> 
+                <mat-label>Nationality</mat-label>
+                <mat-select formControlName="nationality"  id="nationality" [(ngModel)]="text" (selectionChange)="changeme(text)" >
+                  <mat-option [value]="null">--select your country--</mat-option>
+                  <mat-option *ngFor="let  item of posts" [value]="item.name">{{item.name}}</mat-option>
+                </mat-select>
+              </mat-form-field><br>
+              <mat-form-field appearance="fill">
+                <mat-label>phone code</mat-label>
+                <mat-select formControlName="phonecode" id="phone"> 
+                  <mat-option >--select phone code--</mat-option>
+                  <ng-container *ngFor="let item of posts">
+                    <mat-option  *ngIf="item.name==text" [value]="item.callingCodes">+ {{item.callingCodes}}</mat-option>
+                  </ng-container>
+                </mat-select>
+              </mat-form-field>
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Ex. 20504832255" value="mobile number" type="text" formControlName="mobile">
+                </mat-form-field><br>
+                  <mat-form-field appearance="fill">
+                    <mat-label>Zone</mat-label>
+                    <mat-select>
+                      <mat-option>--select a zone--</mat-option>
+                      <mat-option *ngFor="let index of zoneList" value="index.zone_name">{{index.zone_name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <button mat-raised-button color ="primary" (click)="add()" class="add"><mat-icon>add</mat-icon></button><br>
+                  <button mat-raised-button color="primary" class="save" (click)="save()">Save</button>
+    </form>
+  </mat-dialog-content>
+</section>
